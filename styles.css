@@ -1,0 +1,382 @@
+/* =========================================================
+   BASE
+========================================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { font-family: Arial, Helvetica, sans-serif; background: #f7f7f5; color: #171717; }
+img { max-width: 100%; }
+section { scroll-margin-top: 90px; }
+[hidden] { display: none !important; }
+
+/* Added by script.js when an image fails to load */
+img.broken { visibility: hidden; }
+.logo img.broken { display: none; }
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+.topbar {
+  background: #ff6b00; color: white; font-size: 13px; font-weight: bold;
+  padding: 9px 7%; display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap;
+}
+.topbar a { color: white; text-decoration: none; }
+.topbar-links { display: flex; gap: 22px; flex-wrap: wrap; }
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar {
+  height: 80px; padding: 0 7%; display: flex; align-items: center; justify-content: space-between;
+  background: #111; color: white; position: sticky; top: 0; z-index: 100;
+}
+.logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; letter-spacing: -1px; color: white; text-decoration: none; }
+.logo img { height: 48px; width: 48px; object-fit: cover; border-radius: 8px; }
+.logo span { color: #ff6b00; }
+nav { display: flex; gap: 24px; }
+nav a { color: #ccc; text-decoration: none; font-size: 14px; transition: .3s; }
+nav a:hover { color: #ff6b00; }
+.nav-btn {
+  text-decoration: none; color: white; background: #25a244; padding: 11px 20px;
+  border-radius: 6px; font-size: 14px; font-weight: bold;
+}
+.menu-toggle { display: none; background: none; border: none; color: white; font-size: 28px; cursor: pointer; }
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.primary-btn, .secondary-btn, .whatsapp-btn {
+  display: inline-block; padding: 14px 25px; border-radius: 6px; text-decoration: none;
+  font-weight: bold; font-size: 14px; border: none; cursor: pointer;
+}
+.primary-btn { background: #ff6b00; color: white; }
+.primary-btn:hover { background: #e85e00; }
+.secondary-btn { border: 1px solid #555; color: white; }
+.secondary-btn:hover { border-color: #ff6b00; }
+.whatsapp-btn { background: #25a244; color: white; }
+.whatsapp-btn:hover { background: #1e8a39; }
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero {
+  min-height: 650px; padding: 70px 7%; display: grid; grid-template-columns: 1fr 1.1fr;
+  align-items: center; gap: 50px; background: #111; color: white;
+}
+.hero-content { max-width: 560px; }
+.small-title { color: #ff6b00; font-size: 13px; font-weight: bold; letter-spacing: 3px; margin-bottom: 20px; }
+.hero h1 { font-size: 60px; line-height: 1.05; letter-spacing: -2px; margin-bottom: 22px; }
+.hero h1 span { color: #ff6b00; }
+.hero-text { color: #aaa; font-size: 17px; line-height: 1.7; margin-bottom: 30px; }
+.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 10px 22px; color: #ccc; font-size: 13px; }
+.hero-badges span::before { content: "✓ "; color: #ff6b00; font-weight: bold; }
+.hero-car { position: relative; }
+.hero-car img { width: 100%; height: 440px; object-fit: cover; border-radius: 15px; }
+.hero-tag {
+  position: absolute; left: 20px; bottom: 20px; background: #ff6b00; color: white;
+  padding: 14px 20px; border-radius: 10px;
+}
+.hero-tag strong { display: block; font-size: 18px; }
+.hero-tag span { font-size: 12px; opacity: .9; }
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+.section-heading { text-align: center; margin-bottom: 50px; }
+.section-heading p { color: #ff6b00; font-size: 12px; font-weight: bold; letter-spacing: 3px; margin-bottom: 10px; }
+.section-heading h2 { font-size: 40px; }
+.section-heading .sub { color: #777; font-size: 15px; letter-spacing: 0; font-weight: normal; max-width: 620px; margin: 14px auto 0; line-height: 1.6; }
+
+/* Subtitles on dark sections */
+.services-section .section-heading .sub,
+.steps-section .section-heading .sub { color: #999; }
+
+/* =========================================================
+   FORMS (booking + review)
+========================================================= */
+.booking-section { padding: 100px 7%; background: #f7f7f5; }
+.form-card {
+  max-width: 900px; margin: auto; background: white; padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.08);
+}
+.form-card h3 { font-size: 24px; margin-bottom: 25px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+.input-group { margin-bottom: 18px; }
+.input-group.full { grid-column: 1 / -1; }
+.input-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 8px; }
+.label-hint { font-weight: normal; color: #999; }
+.input-group input, .input-group textarea, .input-group select {
+  width: 100%; padding: 13px; border: 1px solid #ddd; border-radius: 6px; outline: none;
+  font-size: 14px; background: white; font-family: inherit;
+}
+.input-group input:focus, .input-group textarea:focus, .input-group select:focus { border-color: #ff6b00; }
+.input-group textarea { height: 90px; resize: none; }
+
+.submit-btn {
+  width: 100%; padding: 15px; border: none; border-radius: 6px; background: #25a244;
+  color: white; font-weight: bold; cursor: pointer; font-size: 15px;
+}
+.submit-btn:hover { background: #1e8a39; }
+.submit-btn.orange { background: #ff6b00; }
+.submit-btn.orange:hover { background: #e85e00; }
+
+.form-note { text-align: center; color: #999; font-size: 12px; margin-top: 15px; line-height: 1.6; }
+
+.form-status { text-align: center; font-size: 13px; margin-top: 15px; line-height: 1.6; }
+.form-status:empty { margin: 0; }
+.form-status.error { color: #d92d20; }
+.form-status.success { color: #16853c; }
+
+/* =========================================================
+   ABOUT
+========================================================= */
+.about-section { padding: 100px 7%; background: white; }
+.about-container { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: auto; }
+.about-text .eyebrow { color: #ff6b00; font-size: 12px; font-weight: bold; letter-spacing: 3px; margin-bottom: 15px; }
+.about-text h2 { font-size: 40px; margin-bottom: 20px; }
+.about-text p { color: #666; line-height: 1.8; margin-bottom: 16px; }
+.about-note { background: #fff4ec; border-left: 4px solid #ff6b00; padding: 18px 20px; border-radius: 6px; margin-top: 10px; }
+.about-note h4 { margin-bottom: 6px; }
+.about-note p { margin: 0; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.stat { background: #111; color: white; padding: 30px 20px; border-radius: 12px; text-align: center; }
+.stat strong { display: block; font-size: 26px; color: #ff6b00; margin-bottom: 8px; }
+.stat span { font-size: 13px; color: #bbb; }
+
+/* =========================================================
+   SERVICES
+========================================================= */
+.services-section { padding: 100px 7%; background: #111; color: white; }
+.services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.service-card { padding: 28px; background: #1b1b1b; border-radius: 10px; border: 1px solid #292929; display: flex; flex-direction: column; }
+.icon { font-size: 30px; margin-bottom: 18px; }
+.service-card h3 { margin-bottom: 12px; font-size: 18px; }
+.service-card p { color: #999; font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex: 1; }
+.service-card a { color: #ff6b00; text-decoration: none; font-weight: bold; font-size: 14px; }
+.service-card a:hover { text-decoration: underline; }
+
+/* =========================================================
+   FLEET
+========================================================= */
+.fleet-section { padding: 100px 7%; }
+.fleet { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 360px)); gap: 28px; justify-content: center; }
+.fleet-card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.07); }
+.fleet-card.popular { border: 2px solid #ffc107; }
+.fleet-img { position: relative; min-height: 230px; background: #1b1b1b; }
+.fleet-img img { width: 100%; height: 230px; object-fit: cover; display: block; }
+.fleet-badge { position: absolute; top: 14px; left: 14px; background: #ff6b00; color: white; font-size: 11px; font-weight: bold; letter-spacing: 1px; padding: 6px 12px; border-radius: 20px; }
+.popular-tag { position: absolute; top: 14px; right: 14px; background: #ffc107; color: #111; font-size: 12px; font-weight: bold; padding: 7px 14px; border-radius: 20px; }
+.fleet-body { padding: 26px; }
+.fleet-body h3 { font-size: 24px; margin-bottom: 6px; }
+.fleet-model { color: #888; font-size: 14px; margin-bottom: 18px; }
+.fleet-specs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.fleet-specs span { background: #f3f3f1; padding: 7px 12px; border-radius: 20px; font-size: 12px; color: #555; }
+
+.fleet-price { background: #f7f8fa; border-radius: 12px; padding: 6px 18px; margin-bottom: 14px; }
+.price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; font-size: 16px; color: #333; }
+.price-row + .price-row { border-top: 1px dashed #ddd; }
+.price-row.bold { font-weight: bold; color: #0b1f4b; }
+.price-row strong { font-size: 24px; color: #0b1f4b; }
+.price-row em { font-style: normal; color: #888; font-size: 13px; font-weight: normal; margin-left: 3px; }
+.fleet-note { color: #999; font-size: 12px; font-style: italic; line-height: 1.5; margin-bottom: 20px; }
+
+.fleet-body .primary-btn { display: block; text-align: center; }
+.important-note { max-width: 800px; margin: 35px auto 0; text-align: center; color: #777; font-size: 14px; line-height: 1.6; }
+
+/* =========================================================
+   ROUTE (PUNE-MUMBAI)
+========================================================= */
+.route-section { padding: 100px 7%; background: #111; color: white; }
+.route-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: auto; }
+.route-info .eyebrow { color: #ff6b00; font-size: 12px; font-weight: bold; letter-spacing: 3px; margin-bottom: 15px; }
+.route-info h2 { font-size: 40px; margin-bottom: 18px; }
+.route-info > p { color: #aaa; line-height: 1.7; margin-bottom: 24px; }
+.route-info ul { list-style: none; margin-bottom: 30px; }
+.route-info li { padding: 8px 0; color: #ddd; font-size: 15px; }
+.route-info li::before { content: "✓"; color: #ff6b00; font-weight: bold; margin-right: 12px; }
+.route-visual { background: #1b1b1b; border: 1px solid #292929; border-radius: 14px; padding: 50px 30px; text-align: center; }
+.route-visual .city { display: inline-block; background: #ff6b00; padding: 12px 28px; border-radius: 8px; font-weight: bold; letter-spacing: 2px; }
+.route-visual .line { width: 3px; height: 70px; background: repeating-linear-gradient(#ff6b00 0 8px, transparent 8px 16px); margin: 14px auto; }
+.route-visual p { color: #999; font-size: 13px; margin-top: 25px; letter-spacing: 2px; }
+
+/* =========================================================
+   DESTINATIONS
+========================================================= */
+.dest-section { padding: 100px 7%; }
+.destinations { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.dest-card { background: white; border: 1px solid #eee; border-radius: 12px; padding: 26px; }
+.dest-card.wide { grid-column: span 2; }
+.dest-card h4 { font-size: 18px; margin-bottom: 6px; }
+.dest-card p { color: #888; font-size: 13px; margin-bottom: 18px; line-height: 1.5; }
+.dest-card a { color: #ff6b00; text-decoration: none; font-weight: bold; font-size: 14px; }
+.dest-card a:hover { text-decoration: underline; }
+
+/* =========================================================
+   PACKAGE OFFER
+========================================================= */
+.offer-section { padding: 70px 7%; background: #ff6b00; color: white; text-align: center; }
+.offer-section .eyebrow { font-size: 12px; letter-spacing: 3px; font-weight: bold; margin-bottom: 10px; }
+.offer-section h2 { font-size: 38px; margin-bottom: 12px; }
+.offer-section .price-line { font-size: 22px; font-weight: bold; margin-bottom: 12px; }
+.offer-section .desc { max-width: 600px; margin: 0 auto 28px; font-size: 15px; line-height: 1.6; opacity: .95; }
+.offer-section .offer-btn { display: inline-block; background: #111; color: white; padding: 15px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; }
+
+/* =========================================================
+   WHY US
+========================================================= */
+.why-section { padding: 100px 7%; background: white; }
+.why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.why-card { padding: 30px; background: #f7f7f5; border-radius: 12px; }
+.why-card .icon { font-size: 32px; }
+.why-card h3 { margin-bottom: 10px; font-size: 18px; }
+.why-card p { color: #777; font-size: 14px; line-height: 1.6; }
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+.steps-section { padding: 100px 7%; background: #111; color: white; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.step { padding: 30px; background: #1b1b1b; border: 1px solid #292929; border-radius: 12px; }
+.step .num { font-size: 40px; font-weight: 800; color: #ff6b00; margin-bottom: 14px; }
+.step h4 { margin-bottom: 10px; font-size: 18px; }
+.step p { color: #999; font-size: 14px; line-height: 1.6; }
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+.reviews-section { padding: 100px 7%; background: #f7f7f5; }
+.review-summary { text-align: center; margin-bottom: 45px; }
+.avg-score { font-size: 56px; font-weight: 800; line-height: 1; }
+.stars { color: #ff6b00; letter-spacing: 3px; font-size: 20px; margin: 8px 0; }
+.review-count { color: #888; font-size: 13px; }
+.reviews-layout { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: start; }
+.reviews-layout .form-card { max-width: none; padding: 35px; }
+.review-list { display: flex; flex-direction: column; gap: 16px; max-height: 560px; overflow-y: auto; padding-right: 6px; }
+.review-card { background: white; border: 1px solid #eee; border-radius: 10px; padding: 22px; }
+.review-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; }
+.review-name { font-weight: bold; }
+.review-date { color: #aaa; font-size: 12px; }
+.review-card .stars { font-size: 16px; margin: 0 0 10px; }
+.review-text { color: #666; line-height: 1.6; font-size: 14px; word-break: break-word; }
+.no-reviews { background: white; border: 1px dashed #ddd; border-radius: 10px; padding: 30px; text-align: center; color: #888; }
+.star-picker { display: flex; gap: 4px; }
+.star-picker button { background: none; border: none; font-size: 32px; line-height: 1; color: #ccc; cursor: pointer; padding: 0 2px; }
+.star-picker button.active { color: #ff6b00; }
+.google-review-link { display: block; text-align: center; margin-top: 14px; color: #ff6b00; font-weight: bold; font-size: 14px; text-decoration: none; }
+.google-review-link:hover { text-decoration: underline; }
+
+/* =========================================================
+   FAQ
+========================================================= */
+.faq-section { padding: 100px 7%; background: white; }
+.faq-list { max-width: 800px; margin: auto; }
+.faq-item { border: 1px solid #eee; border-radius: 10px; margin-bottom: 14px; overflow: hidden; background: #fafafa; }
+.faq-q {
+  width: 100%; text-align: left; background: none; border: none; padding: 20px 24px; font-size: 16px;
+  font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 15px;
+  font-family: inherit; color: #171717;
+}
+.faq-q::after { content: "+"; font-size: 24px; color: #ff6b00; }
+.faq-item.open .faq-q::after { content: "−"; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.faq-a p { padding: 0 24px 22px; color: #666; line-height: 1.7; font-size: 15px; }
+.faq-item.open .faq-a { max-height: 220px; }
+
+/* =========================================================
+   CONTACT
+========================================================= */
+.contact-section { padding: 80px 7%; background: #ff6b00; color: white; }
+.contact-top { text-align: center; margin-bottom: 45px; }
+.contact-top p { font-size: 12px; letter-spacing: 3px; font-weight: bold; margin-bottom: 10px; }
+.contact-top h2 { font-size: 42px; }
+.contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto 35px; }
+.contact-card { background: rgba(255,255,255,.15); border-radius: 12px; padding: 26px; }
+.contact-card h4 { margin-bottom: 12px; font-size: 14px; letter-spacing: 1px; }
+.contact-card a, .contact-card span { color: white; text-decoration: none; font-weight: bold; display: block; margin-bottom: 6px; word-break: break-word; }
+.contact-card small { opacity: .85; }
+.contact-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.contact-actions a { background: #111; color: white; text-decoration: none; padding: 14px 26px; border-radius: 6px; font-weight: bold; font-size: 14px; }
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer { background: #111; color: white; padding: 60px 7% 25px; }
+footer .logo { margin-bottom: 14px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+footer p, footer li, footer a { color: #888; font-size: 14px; line-height: 1.7; }
+footer a { text-decoration: none; }
+footer a:hover { color: #ff6b00; }
+footer h4 { margin-bottom: 16px; font-size: 15px; }
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 8px; }
+.footer-bottom { border-top: 1px solid #222; padding-top: 22px; text-align: center; }
+.footer-bottom p { font-size: 13px; color: #666; }
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+.float-wa {
+  position: fixed; right: 20px; bottom: 20px; z-index: 200; background: #25a244; color: white;
+  text-decoration: none; padding: 14px 20px; border-radius: 40px; font-weight: bold; font-size: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 999; justify-content: center; align-items: center; padding: 20px; }
+.modal.open { display: flex; }
+.modal-box { background: white; max-width: 420px; width: 100%; padding: 40px; border-radius: 12px; text-align: center; }
+.success-icon { width: 60px; height: 60px; background: #19a64a; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 30px; }
+.modal-box h2 { margin-bottom: 12px; }
+.modal-box p { color: #777; line-height: 1.6; margin-bottom: 25px; }
+.modal-box button { background: #111; color: white; border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; }
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 1000px) {
+  .services, .destinations, .steps { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .navbar { padding: 0 5%; }
+  .menu-toggle { display: block; }
+  nav {
+    display: none; position: absolute; top: 80px; left: 0; right: 0; background: #111;
+    flex-direction: column; padding: 10px 5% 25px; gap: 0; border-top: 1px solid #222;
+  }
+  nav.open { display: flex; }
+  nav a { padding: 14px 0; border-bottom: 1px solid #222; font-size: 15px; }
+  .nav-btn { display: none; }
+  .topbar { padding: 9px 5%; justify-content: center; text-align: center; }
+  .hero { grid-template-columns: 1fr; padding: 60px 5%; }
+  .hero h1 { font-size: 48px; }
+  .hero-car img { height: 340px; }
+  .booking-section, .about-section, .services-section, .fleet-section, .route-section,
+  .dest-section, .why-section, .steps-section, .reviews-section, .faq-section { padding: 70px 5%; }
+  .about-container, .route-container { grid-template-columns: 1fr; gap: 40px; }
+  .why { grid-template-columns: 1fr 1fr; }
+  .reviews-layout { grid-template-columns: 1fr; gap: 40px; }
+  .contact-cards { grid-template-columns: 1fr; }
+  .contact-section { padding: 60px 5%; }
+}
+
+@media (max-width: 600px) {
+  .logo { font-size: 17px; }
+  .logo img { height: 40px; width: 40px; }
+  .hero { min-height: auto; }
+  .hero h1 { font-size: 38px; letter-spacing: -1px; }
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons a { text-align: center; }
+  .hero-car img { height: 250px; }
+  .section-heading h2, .about-text h2, .route-info h2 { font-size: 30px; }
+  .form-card { padding: 25px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .services, .destinations, .steps, .why, .stats { grid-template-columns: 1fr; }
+  .dest-card.wide { grid-column: auto; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .contact-top h2, .offer-section h2 { font-size: 32px; }
+  .float-wa { padding: 12px 16px; font-size: 13px; }
+}
