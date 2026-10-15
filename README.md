@@ -1,7 +1,7 @@
-# Gaurav Tours And Travels — Website
+# Gaurav Tours And Travels
 
 Static website for Gaurav Tours And Travels, a 24/7 cab and travel service.
-Customers book through WhatsApp; there is no server or database.
+Customers can book rides through WhatsApp.
 
 ## Project structure
 
